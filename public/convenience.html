@@ -5,17 +5,16 @@
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="convenience_styleguide.css" />
     <link rel="stylesheet" href="convenience_style.css" />
+    <link rel="stylesheet" href="add-menu.css"/>
   </head>
   <body>
     <div class="screen">
       <div class="overlap">
         <div class="overlap-group">
           <div class="text-wrapper">편의점</div>
-          <div class="div">CONVENIENCE STORE</div>
+          <div class="div">CONVENIENCE</div>
         </div>
-        <a href="main.html">
-          <img class="vector" src="img/vector-1.svg" />
-        </a>
+        <img class="vector" src="img/vector-1.svg" />
       </div>
       <div class="text-wrapper-2">팬케이크</div>
       <div class="text-wrapper-3">음식 이름</div>
@@ -57,5 +56,10 @@
         </div>
       </div>
     </div>
+    <div id="main">
+      <button id="addMenuBtn" onclick="location.href='add-menu.html?category=breakfast'">메뉴추가하기</button>
+      <div id="menuContainer"></div>
+  </div>
+    
   </body>
 </html>

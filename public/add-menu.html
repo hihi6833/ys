@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="menuFormContainer">
+        <h1>메뉴 추가하기</h1>
+        <form id="menuForm">
+            <label for="menuName">메뉴 이름:</label>
+            <input type="text" id="menuName" name="menuName" required>
+
+            <label for="menuDescription">설명:</label>
+            <textarea id="menuDescription" name="menuDescription" required></textarea>
+
+            <label for="menuImage">이미지 업로드:</label>
+            <input type="file" id="menuImage" name="menuImage" accept="image/*" required>
+
+            <button type="submit">제출하기</button>
+        </form>
+    </div>
+
+    <script src="add-menu.js"></script>
+</body>
+</html>

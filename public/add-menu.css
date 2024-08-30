@@ -1,0 +1,53 @@
+#addMenuSection {
+  margin-top: 20px;
+}
+
+#addMenuForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+
+#addMenuForm label,
+#addMenuForm input,
+#addMenuForm button {
+  margin-bottom: 10px;
+}
+
+#addMenuForm input,
+#addMenuForm button {
+  padding: 5px;
+  font-size: 16px;
+}
+
+#addMenuForm button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#addMenuForm button:hover {
+  background-color: #ffa6a6;
+}
+
+.button-container {
+display: flex;
+justify-content: flex-end; /* 버튼을 오른쪽으로 정렬 */
+margin-top: 20px; /* 버튼과 위의 요소 사이에 여백 추가 */
+}
+
+button {
+background-color: #ff6b6b;
+color: white;
+border: none;
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+border-radius: 5px;
+}
+
+button:hover {
+background-color: #ffa6a6;
+}

@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="snack_styleguide.css" />
     <link rel="stylesheet" href="snack_style.css" />
+    <link rel="stylesheet" href="add-menu.css"/>
   </head>
   <body>
     <div class="screen">
@@ -13,9 +14,7 @@
           <div class="text-wrapper">간식</div>
           <div class="div">SNACK</div>
         </div>
-        <a href="main.html">
-          <img class="vector" src="img/vector-1.svg" />
-        </a>
+        <img class="vector" src="img/vector-1.svg" />
       </div>
       <div class="text-wrapper-2">팬케이크</div>
       <div class="text-wrapper-3">음식 이름</div>
@@ -57,5 +56,9 @@
         </div>
       </div>
     </div>
+    <div id="main">
+      <button id="addMenuBtn" onclick="location.href='add-menu.html?category=breakfast'">메뉴추가하기</button>
+      <div id="menuContainer"></div>
+  </div>
   </body>
 </html>

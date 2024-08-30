@@ -5,6 +5,12 @@
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="breakfast_style.css" />
     <link rel="stylesheet" href="breakfast_styleguide.css" />
+    <style>
+      .form-container {
+        display: none;
+        margin-top:20px;
+      }
+    </style>
   </head>
   <body>
     <div class="screen">
@@ -13,9 +19,10 @@
           <div class="text-wrapper">아침</div>
           <div class="div">BREAKFAST</div>
         </div>
-        <a href="main.html">
-          <img class="vector" src="img/vector-1.svg" />
-        </a>
+        <img class="vector" src="img/vector-1.svg" />
+      </div>
+      <div id="menulist">
+        */메뉴리스트추가
       </div>
       <div class="text-wrapper-2">팬케이크</div>
       <div class="text-wrapper-3">음식 이름</div>
@@ -26,7 +33,7 @@
       <div class="text-wrapper-8">음식 이름</div>
       <div class="text-wrapper-9">음식 이름</div>
       <div class="text-wrapper-10">음식 이름</div>
-      <div class="text-wrapper-11">아주 맛있는 팬케이크</div>
+      <div class="text-wrapper-11">음식 설명</div>
       <div class="text-wrapper-12">음식 설명</div>
       <div class="text-wrapper-13">음식 설명</div>
       <div class="text-wrapper-14">음식 설명</div>
@@ -38,7 +45,7 @@
       </div>
       <div class="text-wrapper-18">음식 설명</div>
       <div class="text-wrapper-19">음식 설명</div>
-      <img class="rectangle-2" src="img/pancake.png" />
+      <div class="rectangle-2"></div>
       <div class="rectangle-3"></div>
       <div class="rectangle-4"></div>
       <div class="rectangle-5"></div>
@@ -57,5 +64,12 @@
         </div>
       </div>
     </div>
+    <div id="main">
+      <button id="addMenuBtn" onclick="location.href='add-menu.html?category=breakfast'">메뉴추가하기</button>
+      <div id="menuContainer"></div>
+  </div>
+
+  <script src="script.js"></script>
+
   </body>
 </html>
