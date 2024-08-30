@@ -15,7 +15,9 @@ button:focus-visible {
   outline: -webkit-focus-ring-color auto 5px !important;
 }
 a {
+  pointer-events: auto;
   text-decoration: none;
+  color: inherit;
 }
 @font-face {
   font-family: "Pretendard-ExtraBold";

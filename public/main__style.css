@@ -737,6 +737,7 @@
   letter-spacing: -0.45px;
   line-height: 25.2px;
   white-space: nowrap;
+  z-index: 1;
 }
 
 .PC .text-wrapper-20 {
@@ -750,6 +751,7 @@
   letter-spacing: -0.45px;
   line-height: 25.2px;
   white-space: nowrap;
+  z-index: 1;
 }
 
 .PC .frame-3 {
