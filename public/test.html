@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <style>
+        #menuContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .menuItem {
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: calc(50% - 20px); /* 두 개의 메뉴가 한 줄에 배치되도록 조정 */
+            box-sizing: border-box;
+            background-color: #fff;
+        }
+
+        .menuItem img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .menuItem h3, .menuItem p {
+            margin: 0;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="menuContainer"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuContainer = document.getElementById('menuContainer');
+            const menus = [
+                { name: '샐러드', description: '이미미미미미', image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAW4A...4JRKJJMWQwi2RSCQpBdH/D/ewlvgUVTaGAAAAAElFTkSuQmCC', category: 'breakfast' },
+                { name: '가스치킨', description: '미3누', image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAm8A...NxcXFxcXFxcXlp8H/HAA7N+FOkUSP6wAAAABJRU5ErkJggg==', category: 'breakfast' }
+            ];
+
+            const renderMenus = (menus) => {
+                menuContainer.innerHTML = '';  // 기존 메뉴를 모두 지웁니다.
+
+                if (menus.length === 0) {
+                    const noResult = document.createElement('p');
+                    noResult.textContent = '검색 결과가 없습니다.';
+                    menuContainer.appendChild(noResult);
+                }
+
+                menus.forEach((menu) => {
+                    const menuItem = document.createElement('div');
+                    menuItem.classList.add('menuItem');
+
+                    const img = document.createElement('img');
+                    img.src = menu.image;
+                    menuItem.appendChild(img);
+
+                    const name = document.createElement('h3');
+                    name.textContent = menu.name;
+                    menuItem.appendChild(name);
+
+                    const description = document.createElement('p');
+                    description.textContent = menu.description;
+                    menuItem.appendChild(description);
+
+                    console.log('Appending menu item:', menuItem.outerHTML);  // 메뉴 항목의 HTML을 로그로 출력
+                    menuContainer.appendChild(menuItem);
+                });
+            };
+
+            renderMenus(menus);
+        });
+    </script>
+</body>
+</html>
