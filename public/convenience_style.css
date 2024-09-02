@@ -25,21 +25,22 @@
 
 .screen .text-wrapper {
   position: absolute;
-  width: 149px;
-  top: 0;
-  left: 0;
+  width: 223px;
+  top: 289;
+  left: 112;
   font-family: "Pretendard-Bold", Helvetica;
   font-weight: 700;
   color: #fff9ea;
-  font-size: 65px;
-  letter-spacing: -1.62px;
-  line-height: 91px;
+  font-size: 60px;
+  letter-spacing: -1.5px;
+  line-height: 84px;
+  white-space: nowrap;
 }
 
 .screen .div {
   position: absolute;
-  top: 43px;
-  left: 129px;
+  top: 37px;
+  left: 170px;
   font-family: "PT Serif", Helvetica;
   font-weight: 400;
   color: #ffffffb2;
