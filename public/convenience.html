@@ -4,10 +4,21 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="convenience_styleguide.css" />
-    <link rel="stylesheet" href="convenience_style.css" />
+    <link rel="stylesheet" href="category.css" />
     <link rel="stylesheet" href="add-menu.css"/>
   </head>
-  <body>
+  <style>
+      /* 상단 이미지 영역 */
+      .screen .overlap {
+  position: relative;
+  width: 100%;
+  height: 400px; /* 기본 높이 */
+  background-image: url(./img/convenience.png);
+  background-size: cover;
+  background-position: center;
+}
+  </style>
+   <body>
     <div class="screen">
       <div class="overlap">
         <div class="overlap-group">
@@ -15,40 +26,13 @@
           <div class="div">CONVENIENCE</div>
         </div>
         <a href="main.html">
-          <img class="vector" src="img/vector-1.svg" />  
+          <img class="vector" src="img/vector-1.svg" />
         </a>
       </div>
-      <div class="text-wrapper-2">팬케이크</div>
-      <div class="text-wrapper-3">음식 이름</div>
-      <div class="text-wrapper-4">음식 이름</div>
-      <div class="text-wrapper-5">음식 이름</div>
-      <div class="text-wrapper-6">음식 이름</div>
-      <div class="text-wrapper-7">음식 이름</div>
-      <div class="text-wrapper-8">음식 이름</div>
-      <div class="text-wrapper-9">음식 이름</div>
-      <div class="text-wrapper-10">음식 이름</div>
-      <div class="text-wrapper-11">음식 설명</div>
-      <div class="text-wrapper-12">음식 설명</div>
-      <div class="text-wrapper-13">음식 설명</div>
-      <div class="text-wrapper-14">음식 설명</div>
-      <div class="text-wrapper-15">음식 설명</div>
-      <div class="text-wrapper-16">음식 설명</div>
-      <div class="overlap-2">
-        <div class="text-wrapper-17">음식 설명</div>
-        <div class="rectangle"></div>
+      <div id="menulist">
       </div>
-      <div class="text-wrapper-18">음식 설명</div>
-      <div class="text-wrapper-19">음식 설명</div>
-      <div class="rectangle-2"></div>
-      <div class="rectangle-3"></div>
-      <div class="rectangle-4"></div>
-      <div class="rectangle-5"></div>
-      <div class="rectangle-6"></div>
-      <div class="rectangle-7"></div>
-      <div class="rectangle-8"></div>
-      <div class="rectangle-9"></div>
+      <div id="menuContainer"></div>
       <div class="overlap-3">
-        <div class="text-wrapper-20">음식 검색</div>
         <div class="rectangle-10"></div>
         <div class="group">
           <div class="overlap-group-2">
@@ -59,9 +43,10 @@
       </div>
     </div>
     <div id="main">
-      <button id="addMenuBtn" onclick="location.href='add-menu.html?category=breakfast'">메뉴추가하기</button>
-      <div id="menuContainer"></div>
-  </div>
-    
+      <button id="addMenuBtn" onclick="location.href='add-menu.html?category=convenience'">메뉴추가하기</button>
+    </div>
+
+  <script src="script.js"></script>
+
   </body>
 </html>

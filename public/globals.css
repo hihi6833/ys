@@ -1,44 +1,125 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 @import url("https://fonts.googleapis.com/css?family=PT+Serif:400");
+
 * {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
+
 html,
 body {
-  margin: 0px;
+  margin: 0;
   height: 100%;
 }
+
 /* a blue color as a generic focus style */
 button:focus-visible {
   outline: 2px solid #4a90e2 !important;
   outline: -webkit-focus-ring-color auto 5px !important;
 }
-.text-wrapper-19, .text-wrapper-20 {
+
+.text-wrapper-19,
+.text-wrapper-20 {
   pointer-events: auto; /* 링크 클릭이 가능하도록 설정 */
   z-index: 1; /* 요소가 다른 요소 위에 표시되도록 설정 */
 }
 
-
 a {
-  pointer-events:auto;
-  color:inherit;
+  pointer-events: auto;
+  color: inherit;
   text-decoration: none;
 }
+
 @font-face {
   font-family: "Pretendard-ExtraBold";
-  src: url("https://anima-uploads.s3.amazonaws.com/projects/6122f3f935181493bb5c6c35/fonts/pretendard-extrabold.otf")
-    format("opentype");
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/6122f3f935181493bb5c6c35/fonts/pretendard-extrabold.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Pretendard-Bold";
-  src: url("https://anima-uploads.s3.amazonaws.com/projects/5f06a5517739f30d3a8fc967/fonts/pretendard-bold.otf")
-    format("opentype");
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/5f06a5517739f30d3a8fc967/fonts/pretendard-bold.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Pretendard-Regular";
-  src: url("https://anima-uploads.s3.amazonaws.com/projects/5f06a5517739f30d3a8fc967/fonts/pretendard-regular.otf")
-    format("opentype");
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/5f06a5517739f30d3a8fc967/fonts/pretendard-regular.otf") format("opentype");
 }
+
+/* 반응형 레이아웃 시작 */
+
+/* 기본 폰트 및 레이아웃 설정 */
+body {
+  font-size: 16px; /* 기본 폰트 크기 */
+}
+
+/* 작은 화면(모바일) */
+@media (max-width: 600px) {
+  body {
+    font-size: 3.5vw; /* 뷰포트 너비에 비례한 폰트 크기 설정 */
+  }
+
+  .text-wrapper-19,
+  .text-wrapper-20 {
+    font-size: 6vw; /* 작은 화면에서 폰트 크기 조절 */
+    text-align: center;
+  }
+
+  button {
+    font-size: 4vw; /* 버튼 폰트 크기 */
+    padding: 2vw 4vw;
+  }
+
+  .container {
+    padding: 5vw;
+  }
+}
+
+/* 중간 화면(태블릿) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    font-size: 2.5vw; /* 태블릿 화면 크기에 맞춘 폰트 크기 */
+  }
+
+  .text-wrapper-19,
+  .text-wrapper-20 {
+    font-size: 5vw; /* 태블릿용 폰트 크기 */
+  }
+
+  button {
+    font-size: 3vw;
+    padding: 2vw 3vw;
+  }
+
+  .container {
+    padding: 4vw;
+  }
+}
+
+/* 큰 화면(데스크탑) */
+@media (min-width: 1025px) {
+  body {
+    font-size: 18px; /* 데스크탑 기본 폰트 크기 */
+  }
+
+  .text-wrapper-19,
+  .text-wrapper-20 {
+    font-size: 40px; /* 데스크탑용 큰 폰트 */
+  }
+
+  button {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+
+  .container {
+    padding: 30px;
+  }
+}
+
+/* 반응형 이미지 */
+img {
+  max-width: 100%;
+  height: auto; /* 이미지 비율 유지하면서 반응형 */
+}
+
+/* 반응형 레이아웃 끝 */
