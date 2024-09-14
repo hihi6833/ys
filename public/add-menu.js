@@ -36,3 +36,4 @@ document.getElementById('menuForm').addEventListener('submit', function(event) {
         alert('메뉴 이미지 또는 카테고리 정보가 없습니다.');
     }
 });
+
