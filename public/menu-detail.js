@@ -10,10 +10,22 @@ document.addEventListener('DOMContentLoaded', function() {
     if (categoryMenus[menuIndex]) {
         const menu = categoryMenus[menuIndex];
 
+        //조회수 1 증가
+        menu.views = (menu.views || 0) + 1;
+
+         // 업데이트된 메뉴 데이터를 다시 저장
+         savedMenus.forEach((m, i) => {
+            if (m.category === category && categoryMenus.indexOf(m) === menuIndex) {
+                savedMenus[i] = menu;
+            }
+        });
+        localStorage.setItem('menus', JSON.stringify(savedMenus));
+
         document.getElementById('menuName').textContent = menu.name;
         document.getElementById('menuImage').src = menu.image;
         document.getElementById('menuDescription').textContent = menu.description;
-
+        document.getElementById('menuViews').textContent = `조회수: ${menu.views}`;  // 조회수 표시
+        
         // 뒤로가기 버튼을 카테고리 페이지로 연결
         document.getElementById('backBtn').addEventListener('click', function() {
             window.location.href = `${category}.html`;
