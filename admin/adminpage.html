@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Menu Management</title>
+    <link rel="stylesheet" href="adminpage.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Menu Management</h1>
+        
+        <h2>Stored Menus</h2>
+        <ul id="menuList">
+            <!-- 메뉴 목록이 여기에 동적으로 추가됩니다 -->
+        </ul>
+
+        <h2>Manage Menus</h2>
+        <button id="deleteAllMenus">Delete All Menus</button>
+        
+        <div class="menu-form">
+            <h3>Delete Specific Menu</h3>
+            <label for="menuIndex">Enter Menu Index:</label>
+            <input type="number" id="menuIndex" min="0">
+            <button id="deleteMenu">Delete Menu</button>
+        </div>
+    </div>
+
+    <script src="adminpage.js"></script>
+</body>
+</html>

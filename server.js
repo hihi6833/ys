@@ -12,6 +12,8 @@ app.use(bodyParser.json());
 
 // 'public' 폴더를 정적 파일 제공을 위해 사용
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'admin')));
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'main.html'));
@@ -40,6 +42,11 @@ app.get('/midnight', (req, res) => {
 app.get('/posts', (req, res) => {
     res.json(posts);
 });
+
+app.get('/adminpage', (req, res) => {
+    res.sendFile(path.join(__dirname, 'admin', 'adminpage.html'));
+});
+
 
 // 게시글 작성 라우트
 app.post('/posts', (req, res) => {
