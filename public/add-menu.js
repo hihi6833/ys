@@ -17,7 +17,9 @@ document.getElementById('menuForm').addEventListener('submit', function(event) {
                 name: menuName,
                 description: menuDescription,
                 image: imgSrc,
-                category: category
+                category: category,
+                views: 0, // 초기 조회수 0으로 설정
+                createdAt: Date.now() // 현재 시간을 밀리초로 저장
             };
 
             const savedMenus = JSON.parse(localStorage.getItem('menus')) || [];
