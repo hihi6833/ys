@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="kor">
+<html lang="ko"> <!-- 'kor'에서 'ko'로 수정했습니다. -->
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="convenience_styleguide.css" />
     <link rel="stylesheet" href="category.css" />
     <link rel="stylesheet" href="add-menu.css"/>
-  </head>
-  <style>
+    <style>
       /* 상단 이미지 영역 */
       .screen .overlap {
-  position: relative;
-  width: 100%;
-  height: 400px; /* 기본 높이 */
-  background-image: url(./img/convenience.png);
-  background-size: cover;
-  background-position: center;
-}
-  </style>
-   <body>
+        position: relative;
+        width: 100%;
+        height: 400px; /* 기본 높이 */
+        background-image: url(./img/convenience.png);
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body>
     <div class="screen">
       <div class="overlap">
         <div class="overlap-group">
@@ -29,10 +29,13 @@
           <img class="vector" src="img/vector-1.svg" />
         </a>
       </div>
-      <div id="menulist">
-      </div>
+
       <div id="menuContainer"></div>
       <div class="overlap-3">
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="메뉴 이름을 입력하세요...">
+          <div id="searchResults"></div>
+        </div>
         <div class="rectangle-10"></div>
         <div class="group">
           <div class="overlap-group-2">
@@ -41,12 +44,15 @@
           </div>
         </div>
       </div>
+     
+
     </div>
     <div id="main">
       <button id="addMenuBtn" onclick="location.href='add-menu.html?category=convenience'">메뉴추가하기</button>
     </div>
 
-  <script src="script.js"></script>
-
+   
+    <script src="script.js"></script>
+    <script src="search.js"></script> 
   </body>
 </html>
