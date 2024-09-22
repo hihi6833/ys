@@ -44,14 +44,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // 추천 결과를 화면에 표시
         searchResults.innerHTML = ''; // 이전 결과 초기화
         if (matchingMenus.length > 0 && query) {
-            matchingMenus.forEach((menu, index) => {
+            matchingMenus.forEach((menu) => {
                 const suggestionItem = document.createElement('div');
                 suggestionItem.classList.add('suggestionItem');
                 suggestionItem.textContent = menu.name;
 
                 // 추천 항목 클릭 시 해당 메뉴 상세 페이지로 이동
                 suggestionItem.addEventListener('click', function() {
-                    window.location.href = `menu-detail.html?category=${encodeURIComponent(category)}&menuIndex=${index}`;
+                    // 전체 메뉴에서 해당 메뉴의 인덱스를 정확히 찾음
+                    const menuIndex = filteredMenus.indexOf(menu);
+                    window.location.href = `menu-detail.html?category=${encodeURIComponent(category)}&menuIndex=${menuIndex}`;
                 });
 
                 searchResults.appendChild(suggestionItem); // 추천 결과 리스트에 추가
@@ -60,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             searchResults.innerHTML = ''; // 검색어가 없거나 일치하는 항목이 없을 때 추천 초기화
         }
     }
+
 
     // 검색 실행 함수 (엔터 입력 시 호출됨)
     function performSearch(query) {
