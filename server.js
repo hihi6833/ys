@@ -43,6 +43,11 @@ app.get('/posts', (req, res) => {
     res.json(posts);
 });
 
+app.get('/refrigerator', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'refrigeraotr.html'));
+});
+
+
 app.get('/adminpage', (req, res) => {
     res.sendFile(path.join(__dirname, 'admin', 'adminpage.html'));
 });
