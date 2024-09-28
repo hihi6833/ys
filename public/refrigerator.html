@@ -10,7 +10,9 @@
         <div class="screen">
             <div class="div">
                 <div class="overlap">
-                    <div class="text-wrapper">재료 입력</div>
+                    <div class="text-wrapper">
+                        <input type="text" class="search-input" placeholder="재료를 입력하세요..." />
+                    </div>
                     <div class="rectangle"></div>
                     <div class="group">
                         <div class="overlap-group">
@@ -27,10 +29,14 @@
                     <img class="img" src="img/line-13.png" />
                 </div>
                 <p class="recipe">냉장고 속 재료를 입력하면<br />최적의 Recipe 를 추천 해드려요</p>
-                <div class="div-wrapper"><div class="text-wrapper-2">검색</div></div>
+                <div class="div-wrapper"><div class="text-wrapper-2"><button id = searchButton>검색</button></div></div>
                 <a href="main.html"> 
                     <img class="vector" src="img/Vector1.svg" />
                 </a>
+
+                <div id="searchResults" class="results-container"></div>
+                <div id="menuContainer" class="menu-container"></div>
+
                 <div class="group-2">
                     <div class="overlap-group-wrapper">
                         <div class="overlap-group-2">
@@ -40,5 +46,7 @@
                 </div>
             </div>
         </div>
+    <!--script src = "refrigerator.js"></script-->
+    
     </body>
 </html>

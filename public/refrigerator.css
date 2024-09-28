@@ -33,7 +33,10 @@
     font-size: 24px;
     letter-spacing: -0.6px;
     line-height: 33.6px;
+    z-index: 10;
 }
+
+
 
 .screen .rectangle {
     position: absolute;
