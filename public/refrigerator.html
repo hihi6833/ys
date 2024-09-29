@@ -5,13 +5,15 @@
         <link rel="stylesheet" href="globals.css" />
         <link rel="stylesheet" href="refrigerator_styleguide.css" />
         <link rel="stylesheet" href="refrigerator.css" />
+        <link rel="stylesheet" href="show_menu.css" />
+
     </head>
     <body>
         <div class="screen">
             <div class="div">
                 <div class="overlap">
                     <div class="text-wrapper">
-                        <input type="text" class="search-input" placeholder="재료를 입력하세요..." />
+                        <input type="text" class="search-input" size = 90 placeholder="재료를 입력하세요... 콤마로 구분하여 입력 (예 : 상추, 토마토, 오이)" />
                     </div>
                     <div class="rectangle"></div>
                     <div class="group">
@@ -29,7 +31,11 @@
                     <img class="img" src="img/line-13.png" />
                 </div>
                 <p class="recipe">냉장고 속 재료를 입력하면<br />최적의 Recipe 를 추천 해드려요</p>
-                <div class="div-wrapper"><div class="text-wrapper-2"><button id = searchButton>검색</button></div></div>
+                
+                <button id = searchButton class="div-wrapper">
+                    <div class="text-wrapper-2">검색</div>
+                </button>
+                
                 <a href="main.html"> 
                     <img class="vector" src="img/Vector1.svg" />
                 </a>
@@ -46,7 +52,7 @@
                 </div>
             </div>
         </div>
-    <!--script src = "refrigerator.js"></script-->
+    <script src = "refrigerator.js"></script>
     
     </body>
 </html>
