@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // 검색 결과 표시
-        displayMenus(matchingMenus);
+        displayMenus(matchingMenus, savedMenus);
 
         // 검색 결과 메시지 표시
         if (matchingMenus.length === 0) {
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // 메뉴를 화면에 표시하는 함수
-    function displayMenus(menus) {
+    function displayMenus(menus, savedMenus) {
         menuContainer.innerHTML = ''; // 기존 메뉴 초기화
 
         if (menus.length === 0) {
