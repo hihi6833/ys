@@ -48,9 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
             recipeParagraph.textContent = '레시피 정보가 없습니다.';
         }
 
-        // 뒤로가기 버튼을 카테고리 페이지로 연결
+        // 뒤로가기 버튼을 카테고리 페이지로 연결 (+안하고 이전페이지로 연결)
         document.getElementById('backBtn').addEventListener('click', function() {
-            window.location.href = `${category}.html`;
+            //window.location.href = ${category}.html;
+            history.back();
         });
 
         // 삭제 버튼 동작
