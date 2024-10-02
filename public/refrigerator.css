@@ -267,3 +267,43 @@
         top: 120px;
     }
 }
+
+/* body 전체에 배경 색상을 적용 */
+body {
+    background-color: #fff9ea; /* 기존 배경색 유지 */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen {
+    background-color: #fff9ea; /* 추가로 화면 내 배경색도 동일하게 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* 반응형 배경 처리 */
+@media (max-width: 1200px) {
+    body {
+        background-color: #fff9ea; /* 작은 화면에서도 배경 유지 */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-color: #fff9ea; /* 중간 화면 크기 배경 */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-color: #fff9ea; /* 작은 화면에서도 일관된 배경색 */
+    }
+}
