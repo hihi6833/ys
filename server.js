@@ -76,6 +76,22 @@ app.post('/posts', (req, res) => {
 
 app.use(cors());
 
+// 로그인 처리 라우트 추가
+app.post('/login', (req, res) => {
+    const { id, password } = req.body;
+
+    // 실제로는 데이터베이스에서 사용자 정보를 조회하고 검증해야 합니다.
+    const validId = '000';
+    const validPassword = '1111';
+
+    if (id === validId && password === validPassword) {
+        // 인증 성공 시 adminpage.html로 리다이렉션
+        res.json({ success: true, redirect: '/adminpage' });
+    } else {
+        // 인증 실패 시 에러 메시지 반환
+        res.json({ success: false, message: '아이디 또는 비밀번호가 올바르지 않습니다.' });
+    }
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

@@ -132,16 +132,23 @@
                 <td><h2>관리자 로그인</h2></td>
             </tr>
             <tr>
-                <td><input type="text" name="id" required placeholder="ID"></td>
+                <td>
+                    <!--label for="id">ID:</label-->
+                    <input type="text" id="id" name="id" required placeholder="ID">
+                </td>
             </tr>
             <tr>
-                <td><input type="password" name="password" required placeholder="Password"></td>
+                <td>
+                    <!--label for="password">Password:</label-->
+                    <input type="password" id="password" name="password" required placeholder="Password">
+                </td>
             </tr>
             <tr>
                 <td><input type="submit" value="Sign in" class="btn"></td>
             </tr>
-            
         </table>
+        <div id="errorMessage" class="error"></div>
     </form>
+    <script src="login.js"></script>
   </body>
 </html>
