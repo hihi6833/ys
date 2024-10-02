@@ -8,14 +8,14 @@
 
 .PC .div {
   background-color: #fff9ea;
-  width: 1920px;
-  height: 6000px;
+  width: 100%;
+  height: 3000px;
   position: relative;
 }
 
 .PC .overlap {
   position: absolute;
-  width: 1920px;
+  width: 100%;
   height: 1200px;
   top: 229px;
   left: 0;
@@ -61,8 +61,8 @@
 }
 
 .PC .overlap-group {
-  position: absolute;
-  width: 1720px;
+  position: relative;
+  width: 94%;
   height: 583px;
   top: 1858px;
   left: 101px;
@@ -106,7 +106,7 @@
 
 .PC .group {
   position: absolute;
-  width: 1565px;
+  width: 94%;
   height: 83px;
   top: 440px;
   left: 98px;
