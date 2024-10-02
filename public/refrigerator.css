@@ -36,8 +36,6 @@
     z-index: 10;
 }
 
-
-
 .screen .rectangle {
     position: absolute;
     width: 800px;
@@ -169,4 +167,103 @@
     height: 69px;
     top: 0;
     left: 30px;
+}
+
+/* 반응형 디자인 추가 */
+@media (max-width: 1200px) {
+    .screen .div {
+        width: 100%;
+        height: auto;
+    }
+
+    .screen .overlap {
+        width: 90%;
+        height: 60px;
+        top: 450px;
+        left: 5%;
+    }
+
+    .screen .text-wrapper {
+        width: 100%;
+        left: 10px;
+        font-size: 18px;
+    }
+
+    .screen .rectangle {
+        width: 100%;
+        height: 60px;
+    }
+
+    .screen .recipe {
+        width: 100%;
+        top: 250px;
+        left: 0;
+        font-size: 36px;
+    }
+
+    .screen .div-wrapper {
+        width: 200px;
+        top: 600px;
+        left: calc(50% - 100px);
+    }
+
+    .screen .group-2 {
+        width: 150px;
+        height: 100px;
+        top: 180px;
+        left: calc(50% - 75px);
+    }
+}
+
+@media (max-width: 768px) {
+    .screen .overlap {
+        top: 400px;
+        height: 50px;
+    }
+
+    .screen .text-wrapper {
+        font-size: 16px;
+        width: 85%;
+    }
+
+    .screen .rectangle {
+        height: 50px;
+    }
+
+    .screen .recipe {
+        font-size: 28px;
+        top: 200px;
+    }
+
+    .screen .div-wrapper {
+        top: 500px;
+    }
+
+    .screen .group-2 {
+        top: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .screen .recipe {
+        font-size: 20px;
+        top: 150px;
+    }
+
+    .screen .overlap {
+        top: 350px;
+        height: 40px;
+    }
+
+    .screen .text-wrapper {
+        font-size: 14px;
+    }
+
+    .screen .div-wrapper {
+        top: 450px;
+    }
+
+    .screen .group-2 {
+        top: 120px;
+    }
 }
