@@ -48,7 +48,7 @@ document.getElementById('menuForm').addEventListener('submit', function(event) {
             };
 
             // 서버에 메뉴 추가 요청
-            fetch('http://localhost:3000/menus', {
+            fetch('https://recipeople-8b0228b8c755.herokuapp.com/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

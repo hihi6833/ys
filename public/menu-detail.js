@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const category = urlParams.get('category');
 
     // 서버에서 메뉴 데이터 가져오기
-    fetch('http://localhost:3000/menus')
+    fetch('https://recipeople-8b0228b8c755.herokuapp.com/menus')
     .then(response => response.json())
     .then(data => {
         const categoryMenus = data.filter(menu => menu.category === category);
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             menu.views = (menu.views || 0) + 1;
 
             // 업데이트된 조회수를 서버에 저장
-            fetch(`http://localhost:3000/menus/${menu.id}`, {
+            fetch(`https://recipeople-8b0228b8c755.herokuapp.com//menus/${menu.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('deleteMenuBtn').addEventListener('click', function() {
                 if (confirm('정말로 이 메뉴를 삭제하시겠습니까?')) {
                     // 메뉴 삭제 요청
-                    fetch(`http://localhost:3000/menus/${menu.id}`, {
+                    fetch(`https://recipeople-8b0228b8c755.herokuapp.com/menus/${menu.id}`, {
                         method: 'DELETE',
                     })
                     .then(response => {
