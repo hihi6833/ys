@@ -7,8 +7,12 @@ const cors = require('cors');
 let menus = []; // 메뉴 데이터를 저장하는 배열
 
 // body-parser를 사용해 POST 요청 데이터 처리
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+
+
+
+app.use(bodyParser.json({ limit: '10mb' }));
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
+
 
 // CORS 설정
 app.use(cors());
