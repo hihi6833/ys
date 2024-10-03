@@ -4,21 +4,42 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-let posts = []; // 메모리에 게시글 저장
+let menus = []; // 메뉴 데이터를 저장하는 배열
 
 // body-parser를 사용해 POST 요청 데이터 처리
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// CORS 설정
+app.use(cors());
+
 // 'public' 폴더를 정적 파일 제공을 위해 사용
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'admin')));
 
-
+// 기본 라우트
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'main.html'));
 });
 
+// 메뉴를 가져오는 API
+app.get('/menus', (req, res) => {
+    res.json(menus);
+});
+
+// 메뉴 추가 API
+app.post('/menus', (req, res) => {
+    const newMenu = req.body; // 요청 본문에서 새 메뉴 데이터를 가져옴
+
+    if (!newMenu.name || !newMenu.category) {
+        return res.status(400).send('메뉴 이름과 카테고리가 필요합니다.');
+    }
+
+    menus.push(newMenu); // 새 메뉴를 배열에 추가
+    res.status(201).json(newMenu); // 추가된 메뉴 반환
+});
+
+// 기존의 라우트들
 app.get('/breakfast', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'breakfast.html'));
 });
@@ -39,42 +60,13 @@ app.get('/midnight', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'midnight.html'));
 });
 
-app.get('/posts', (req, res) => {
-    res.json(posts);
-});
-
 app.get('/refrigerator', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'refrigeraotr.html'));
+    res.sendFile(path.join(__dirname, 'public', 'refrigerator.html'));
 });
-
 
 app.get('/adminpage', (req, res) => {
     res.sendFile(path.join(__dirname, 'admin', 'adminpage.html'));
 });
-
-
-// 게시글 작성 라우트
-app.post('/posts', (req, res) => {
-    const { title, content } = req.body;
-    
-    if (!title || !content) {
-      return res.status(400).send('Title and content are required.');
-    }
-  
-    const newPost = {
-      id: posts.length + 1,
-      title,
-      content,
-      createdAt: new Date(),
-    };
-  
-    posts.push(newPost);
-  
-    res.status(201).json(newPost);
-});
-
-
-app.use(cors());
 
 // 로그인 처리 라우트 추가
 app.post('/login', (req, res) => {
@@ -97,4 +89,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
-//asdasdasdasd

@@ -8,7 +8,7 @@ document.getElementById('menuForm').addEventListener('submit', function(event) {
     const menuDescription = document.getElementById('menuDescription').value.trim();
     const menuImage = document.getElementById('menuImage').files[0];
     const menuIngredientsInput = document.getElementById('menuIngredients').value.trim();
-    const menuRecipe = document.getElementById('menuRecipe').value.trim(); // 레시피 입력값 가져오기
+    const menuRecipe = document.getElementById('menuRecipe').value.trim();
 
     // 재료 입력 유효성 검사
     if (!menuIngredientsInput) {
@@ -22,10 +22,9 @@ document.getElementById('menuForm').addEventListener('submit', function(event) {
         return;
     }
 
-    // 재료를 콤마로 구분하여 배열로 변환
     const menuIngredients = menuIngredientsInput.split(',')
-        .map(ingredient => ingredient.trim().toLowerCase()) // 각 재료의 공백 제거 및 소문자 변환
-        .filter(ingredient => ingredient !== ''); // 빈 문자열 제거
+        .map(ingredient => ingredient.trim().toLowerCase())
+        .filter(ingredient => ingredient !== '');
 
     if (menuIngredients.length === 0) {
         alert('유효한 재료를 입력해주세요.');
@@ -42,22 +41,35 @@ document.getElementById('menuForm').addEventListener('submit', function(event) {
                 description: menuDescription,
                 image: imgSrc,
                 category: category,
-                views: 0, // 초기 조회수 0으로 설정
-                createdAt: Date.now(), // 현재 시간을 밀리초로 저장
-                ingredients: menuIngredients, // 재료 배열 저장
-                recipe: menuRecipe // 레시피 저장
+                views: 0,
+                createdAt: Date.now(),
+                ingredients: menuIngredients,
+                recipe: menuRecipe
             };
 
-            const savedMenus = JSON.parse(localStorage.getItem('menus')) || [];
-            savedMenus.push(newMenu);
-            localStorage.setItem('menus', JSON.stringify(savedMenus));
-
-            alert('메뉴가 추가되었습니다.');
-
-            // 리다이렉트 URL을 수정합니다.
-            const redirectUrl = `${category}.html`;
-            console.log('리다이렉트 URL:', redirectUrl); // 디버깅: 올바른 URL 출력
-            window.location.href = redirectUrl;
+            // 서버에 메뉴 추가 요청
+            fetch('http://localhost:3000/menus', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newMenu),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('메뉴 추가에 실패했습니다.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert('메뉴가 추가되었습니다.');
+                const redirectUrl = `${category}.html`;
+                window.location.href = redirectUrl;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('메뉴 추가 중 오류가 발생했습니다.');
+            });
         }
         reader.readAsDataURL(menuImage);
     } else {
