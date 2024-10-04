@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             menu.views = (menu.views || 0) + 1;
 
             // 업데이트된 조회수를 서버에 저장
-            fetch(`https://recipeople-8b0228b8c755.herokuapp.com/menus/${menu.id}`, {
+            fetch(`https://recipeople-8b0228b8c755.herokuapp.com//menus/${menu.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
