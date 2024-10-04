@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuContainer = document.getElementById('menuContainer');
 
     // 서버에서 메뉴 데이터 가져오기
-    fetch('https://recipeople-8b0228b8c755.herokuapp.com/menus')
+    fetch('http://localhost:3000/menus')
     .then(response => {
         if (!response.ok) {
             throw new Error('메뉴 데이터를 가져오는 데 실패했습니다.');
